@@ -15,9 +15,10 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "NTk3ODdjNDUtZjljNy00MjA1LTlmNzAtNjBjOTExOTBiY2VjfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -43,7 +44,12 @@
         "style": "css",
         "linter": "eslint"
       }
+    },
+    "@nrwl/gatsby": {
+      "application": {
+        "style": "css"
+      }
     }
   },
-  "defaultProject": "2019-bike-tour"
+  "defaultProject": "nbkparks-bike-tour"
 }

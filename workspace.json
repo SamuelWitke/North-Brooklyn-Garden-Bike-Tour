@@ -1,7 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "2019-bike-tour": "apps/2019-bike-tour",
-    "2019-bike-tour-e2e": "apps/2019-bike-tour-e2e"
+    "biketour2019": "libs/biketour2019",
+    "nbkparks-bike-tour": "apps/nbkparks-bike-tour",
+    "nbkparks-bike-tour-e2e": "apps/nbkparks-bike-tour-e2e"
   }
 }

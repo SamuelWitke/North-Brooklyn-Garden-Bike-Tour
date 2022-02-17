@@ -1,0 +1,73 @@
+{
+  "root": "apps/nbkparks-bike-tour",
+  "sourceRoot": "apps/nbkparks-bike-tour/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/nbkparks-bike-tour",
+        "index": "apps/nbkparks-bike-tour/src/index.html",
+        "baseHref": "/",
+        "main": "apps/nbkparks-bike-tour/src/main.tsx",
+        "polyfills": "apps/nbkparks-bike-tour/src/polyfills.ts",
+        "tsConfig": "apps/nbkparks-bike-tour/tsconfig.app.json",
+        "assets": [
+          "apps/nbkparks-bike-tour/src/favicon.ico",
+          "apps/nbkparks-bike-tour/src/assets"
+        ],
+        "styles": ["apps/nbkparks-bike-tour/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "apps/nbkparks-bike-tour/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/nbkparks-bike-tour/src/environments/environment.ts",
+              "with": "apps/nbkparks-bike-tour/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "nbkparks-bike-tour:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "nbkparks-bike-tour:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nbkparks-bike-tour/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/nbkparks-bike-tour"],
+      "options": {
+        "jestConfig": "apps/nbkparks-bike-tour/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,43 @@
+{
+  "root": "libs/biketour2019",
+  "sourceRoot": "libs/biketour2019/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/biketour2019",
+        "tsConfig": "libs/biketour2019/tsconfig.lib.json",
+        "project": "libs/biketour2019/package.json",
+        "entryFile": "libs/biketour2019/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/biketour2019/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/biketour2019/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/biketour2019"],
+      "options": {
+        "jestConfig": "libs/biketour2019/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

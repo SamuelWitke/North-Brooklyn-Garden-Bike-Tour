@@ -1,0 +1,28 @@
+{
+  "root": "apps/nbkparks-bike-tour-e2e",
+  "sourceRoot": "apps/nbkparks-bike-tour-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/nbkparks-bike-tour-e2e/cypress.json",
+        "devServerTarget": "nbkparks-bike-tour:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "nbkparks-bike-tour:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nbkparks-bike-tour-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["nbkparks-bike-tour"]
+}

@@ -5,6 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build --prod",
+    "affected:test": "nx affected --target=test",
+    "dep-graph:build": "nx dep-graph --file=dist/apps/nbkparks-bike-tour/graph.html",
     "test": "nx test"
   },
   "private": true,

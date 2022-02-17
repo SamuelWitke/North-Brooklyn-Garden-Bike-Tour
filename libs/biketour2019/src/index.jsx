@@ -1,6 +1,6 @@
 import mapSrc from './assets/map.svg';
 import App from './lib/app/App'
-export * from './lib/biketour2019';
+
 export default () => (
   <App
     mapSrc={mapSrc}

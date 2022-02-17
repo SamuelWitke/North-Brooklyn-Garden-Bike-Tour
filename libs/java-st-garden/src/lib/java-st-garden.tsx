@@ -6,7 +6,7 @@ export interface JavaStGardenProps {}
 
 export function JavaStGarden(props: JavaStGardenProps) {
   return (
-    <section className="js-section" data-zoom-middle={1}>
+    <section className="js-section" data-zoom-middle={1} >
     <h1>
       <span className="title-up" style={{fontSize:"1.365em"}}>58 Java St, Brooklyn, NY 11222</span>
       <span className="title-down" style={{fontSize:"3.365em"}}>Java Street Garden</span>

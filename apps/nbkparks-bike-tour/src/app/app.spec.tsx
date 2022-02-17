@@ -22,6 +22,5 @@ describe('App', () => {
       </BrowserRouter>
     );
 
-    expect(getByText(/Welcome nbkparks-bike-tour/gi)).toBeTruthy();
   });
 });

@@ -855,12 +855,10 @@ export default class App extends Component {
       <div className="main">
         <header className="codrops-header">
           <h1 className="header-title">
-            <span className="header-title__main">The Wild Path</span>{" "}
-            <span className="header-title__part">An Icelandic Adventure</span>{" "}
+            <span className="header-title__main">Open Garden Day 2019</span>{" "}
+            <span className="header-title__part">Bike Tour</span>{" "}
             <span className="header-title__sub">
               An interactive storytelling experiment with Canvas. <br />
-              Photo courtesy of{" "}
-              <a href="http://instagram.com/danrubin/">Dan Rubin</a>.
             </span>
           </h1>
         </header>

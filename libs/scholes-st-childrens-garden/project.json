@@ -1,0 +1,45 @@
+{
+  "root": "libs/scholes-st-childrens-garden",
+  "sourceRoot": "libs/scholes-st-childrens-garden/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/scholes-st-childrens-garden",
+        "tsConfig": "libs/scholes-st-childrens-garden/tsconfig.lib.json",
+        "project": "libs/scholes-st-childrens-garden/package.json",
+        "entryFile": "libs/scholes-st-childrens-garden/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/scholes-st-childrens-garden/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/scholes-st-childrens-garden/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/scholes-st-childrens-garden"],
+      "options": {
+        "jestConfig": "libs/scholes-st-childrens-garden/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

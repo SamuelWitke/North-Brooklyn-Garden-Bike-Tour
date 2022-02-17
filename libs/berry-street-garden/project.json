@@ -1,0 +1,43 @@
+{
+  "root": "libs/berry-street-garden",
+  "sourceRoot": "libs/berry-street-garden/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/berry-street-garden",
+        "tsConfig": "libs/berry-street-garden/tsconfig.lib.json",
+        "project": "libs/berry-street-garden/package.json",
+        "entryFile": "libs/berry-street-garden/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/berry-street-garden/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/berry-street-garden/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/berry-street-garden"],
+      "options": {
+        "jestConfig": "libs/berry-street-garden/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

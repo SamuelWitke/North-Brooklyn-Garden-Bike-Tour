@@ -15,8 +15,22 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nbkparks/berry-street-garden": [
+        "libs/berry-street-garden/src/index.ts"
+      ],
       "@nbkparks/biketour2019": ["libs/biketour2019/src/index.jsx"],
-      "@nbkparks/biketour2022": ["libs/biketour2022/src/index.ts"]
+      "@nbkparks/biketour2022": ["libs/biketour2022/src/index.ts"],
+      "@nbkparks/el-puente": ["libs/el-puente/src/index.ts"],
+      "@nbkparks/java-st-garden": ["libs/java-st-garden/src/index.ts"],
+      "@nbkparks/keap-fourth": ["libs/keap-fourth/src/index.ts"],
+      "@nbkparks/lentol-garden": ["libs/lentol-garden/src/index.ts"],
+      "@nbkparks/red-shed-garden": ["libs/red-shed-garden/src/index.ts"],
+      "@nbkparks/scholes-st-childrens-garden": [
+        "libs/scholes-st-childrens-garden/src/index.ts"
+      ],
+      "@nbkparks/sunshine-community-garden": [
+        "libs/sunshine-community-garden/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

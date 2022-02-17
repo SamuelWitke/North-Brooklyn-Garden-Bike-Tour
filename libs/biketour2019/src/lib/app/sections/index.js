@@ -1,25 +1,22 @@
-import React from "react";
-
-import Section0 from "./section0";
-import Section1 from "./section1";
-import Section2 from "./section2";
-import Section3 from "./section3";
-import Section4 from "./section4";
-import Section5 from "./section5";
-import Section6 from "./section6";
-import Section7 from "./section7";
-import Section8 from "./section8";
+import React from 'react';
+import { LentolGarden } from '@nbkparks/lentol-garden';
+import { JavaStGarden } from '@nbkparks/java-st-garden';
+import { RedShedGarden } from '@nbkparks/red-shed-garden';
+import { ScholesStChildrensGarden } from '@nbkparks/scholes-st-childrens-garden';
+import { SunshineCommunityGarden } from '@nbkparks/sunshine-community-garden';
+import { KeapFourth } from '@nbkparks/keap-fourth';
+import { ElPuente } from '@nbkparks/el-puente';
+import { BerryStreetGarden } from '@nbkparks/berry-street-garden';
 
 export default () => (
   <div className="text">
-    <Section0 />
-    <Section1 />
-    <Section2 />
-    <Section3 />
-    <Section4 />
-    <Section5 />
-    <Section6 />
-    <Section7 />
-    <Section8 />
-</div>
+    <JavaStGarden />
+    <LentolGarden />
+    <RedShedGarden />
+    <ScholesStChildrensGarden />
+    <SunshineCommunityGarden />
+    <KeapFourth />
+    <ElPuente />
+    <BerryStreetGarden />
+  </div>
 );

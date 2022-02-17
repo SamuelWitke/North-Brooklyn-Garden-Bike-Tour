@@ -1,0 +1,43 @@
+{
+  "root": "libs/lentol-garden",
+  "sourceRoot": "libs/lentol-garden/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/lentol-garden",
+        "tsConfig": "libs/lentol-garden/tsconfig.lib.json",
+        "project": "libs/lentol-garden/package.json",
+        "entryFile": "libs/lentol-garden/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/lentol-garden/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/lentol-garden/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/lentol-garden"],
+      "options": {
+        "jestConfig": "libs/lentol-garden/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

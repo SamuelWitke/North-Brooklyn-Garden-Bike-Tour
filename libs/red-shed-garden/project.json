@@ -1,0 +1,43 @@
+{
+  "root": "libs/red-shed-garden",
+  "sourceRoot": "libs/red-shed-garden/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/red-shed-garden",
+        "tsConfig": "libs/red-shed-garden/tsconfig.lib.json",
+        "project": "libs/red-shed-garden/package.json",
+        "entryFile": "libs/red-shed-garden/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/red-shed-garden/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/red-shed-garden/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/red-shed-garden"],
+      "options": {
+        "jestConfig": "libs/red-shed-garden/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

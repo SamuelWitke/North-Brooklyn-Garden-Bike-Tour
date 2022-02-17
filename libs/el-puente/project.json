@@ -1,0 +1,43 @@
+{
+  "root": "libs/el-puente",
+  "sourceRoot": "libs/el-puente/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/el-puente",
+        "tsConfig": "libs/el-puente/tsconfig.lib.json",
+        "project": "libs/el-puente/package.json",
+        "entryFile": "libs/el-puente/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/el-puente/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/el-puente/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/el-puente"],
+      "options": {
+        "jestConfig": "libs/el-puente/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

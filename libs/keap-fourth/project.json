@@ -1,0 +1,43 @@
+{
+  "root": "libs/keap-fourth",
+  "sourceRoot": "libs/keap-fourth/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/keap-fourth",
+        "tsConfig": "libs/keap-fourth/tsconfig.lib.json",
+        "project": "libs/keap-fourth/package.json",
+        "entryFile": "libs/keap-fourth/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/keap-fourth/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/keap-fourth/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/keap-fourth"],
+      "options": {
+        "jestConfig": "libs/keap-fourth/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

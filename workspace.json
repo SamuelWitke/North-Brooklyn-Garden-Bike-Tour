@@ -1,9 +1,17 @@
 {
   "version": 2,
   "projects": {
+    "berry-street-garden": "libs/berry-street-garden",
     "biketour2019": "libs/biketour2019",
     "biketour2022": "libs/biketour2022",
+    "el-puente": "libs/el-puente",
+    "java-st-garden": "libs/java-st-garden",
+    "keap-fourth": "libs/keap-fourth",
+    "lentol-garden": "libs/lentol-garden",
     "nbkparks-bike-tour": "apps/nbkparks-bike-tour",
-    "nbkparks-bike-tour-e2e": "apps/nbkparks-bike-tour-e2e"
+    "nbkparks-bike-tour-e2e": "apps/nbkparks-bike-tour-e2e",
+    "red-shed-garden": "libs/red-shed-garden",
+    "scholes-st-childrens-garden": "libs/scholes-st-childrens-garden",
+    "sunshine-community-garden": "libs/sunshine-community-garden"
   }
 }

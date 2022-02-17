@@ -1,0 +1,45 @@
+{
+  "root": "libs/sunshine-community-garden",
+  "sourceRoot": "libs/sunshine-community-garden/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sunshine-community-garden",
+        "tsConfig": "libs/sunshine-community-garden/tsconfig.lib.json",
+        "project": "libs/sunshine-community-garden/package.json",
+        "entryFile": "libs/sunshine-community-garden/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/sunshine-community-garden/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/sunshine-community-garden/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/sunshine-community-garden"],
+      "options": {
+        "jestConfig": "libs/sunshine-community-garden/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

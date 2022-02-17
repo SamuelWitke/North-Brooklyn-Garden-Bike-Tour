@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build": "nx build --prod --baseHref=https://samuelwitke.github.io/North-Brooklyn-Garden-Bike-Tour",
+    "build": "nx build --prod --baseHref=/North-Brooklyn-Garden-Bike-Tour/",
     "affected:test": "nx affected --target=test",
     "dep-graph:build": "nx dep-graph --file=dist/apps/nbkparks-bike-tour/graph.html",
     "test": "nx test"
@@ -63,7 +63,6 @@
     "babel-jest": "27.2.3",
     "babel-plugin-module-resolver": "4.1.0",
     "babel-preset-gatsby": "2.2.0",
-    "cypress": "^9.1.0",
     "eslint": "~8.7.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",

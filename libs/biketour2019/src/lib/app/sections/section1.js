@@ -1,42 +1,67 @@
-import React from "react";
-import fifth from "../img/journey/5.jpg";
+import React from 'react';
+import fifth from '../img/journey/5.jpg';
 
 export default () => (
   <section className="js-section" data-zoom-start={2}>
     <h2>
-      <span className="title-up">Section 1</span>
-      <span className="title-down">Garden 3</span>
+      <span className="title-up">
+        Graham Ave., Meeker Ave., Humbolt St., BQE
+      </span>
+      <span className="title-down">Lentol Garden</span>
     </h2>
     <p>
-      We were six in all—a semi-scientific party. There was Miss J. A. Hastie, a
-      woman who has travelled much in Europe, Asia, Africa, and America, and who
-      is not unacquainted with our Colonies at the Antipodes, or with the
-      islands of the South Seas. She was specially interested in the botany of
-      the country, in its folklore, and in the people. Then there was Captain W.
-      H. Cope; he had been at sea for the greater part of his life, and had in
-      the course of his journeyings seen much of the world; he was our nautical
-      adviser, and we referred to him in matters connected with the sea. W.
-      Glen, Miss Hastie's cousin, was known as the "handy man" of the party. If
-      anybody was in difficulties, Glen was always on the spot to lend a helping
-      hand. He produced all sorts of things at the right moment. Did any one
-      require a screw-driver, then Glen had it; want a corkscrew, Glen could
-      supply it; a pair of scissors, he produced them—some string, a strap, it
-      was all the same. If a camera struck work, Glen could render the strike
-      ineffective, for he carried two, and could lend one without interfering
-      with his own photographic work. A. W. Hill, of King's College, Cambridge,
-      was our botanist—who describes what he saw. H. H. Thomas, of Balliol, paid
-      special attention to the geological formation of the country that we
-      traversed, and he was frequently to be seen, camera in hand, taking shots
-      at interesting formations—a glaciated lava surface, a volcanic vent, or an
-      immense "erratic" boulder or "perched block," for instance; he also
-      sketched industriously, and sometimes paced the ground compass in hand in
-      order that he might record in his note-book the direction of a line of
-      fissure, or the position of hot springs along that line; or something else
-      of interest to geologists in particular. I was the geographer, whose
-      mission it was to make a map of a small portion of the country traversed,
-      to get a general idea of its conformation, and to note valleys and
-      mountains, ice-fields and snow slopes, lava flows and hot springs, mighty
-      rivers and tiny rivulets.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Dolor morbi non arcu
+      risus quis varius quam. Interdum posuere lorem ipsum dolor sit amet
+      consectetur. Sit amet consectetur adipiscing elit duis. Fringilla urna
+      porttitor rhoncus dolor. Auctor augue mauris augue neque gravida in
+      fermentum. Vel turpis nunc eget lorem dolor sed viverra. Libero justo
+      laoreet sit amet cursus. Tincidunt id aliquet risus feugiat in ante metus
+      dictum. Felis donec et odio pellentesque diam volutpat commodo sed. Nisi
+      est sit amet facilisis magna etiam tempor orci. Dictum non consectetur a
+      erat nam at lectus urna. Adipiscing elit pellentesque habitant morbi
+      tristique. Ut lectus arcu bibendum at varius vel pharetra vel turpis. Sed
+      id semper risus in hendrerit gravida rutrum. Adipiscing commodo elit at
+      imperdiet dui accumsan sit. Elementum sagittis vitae et leo duis ut diam
+      quam. Interdum consectetur libero id faucibus nisl. Diam quam nulla
+      porttitor massa. Sollicitudin tempor id eu nisl. Euismod lacinia at quis
+      risus sed vulputate. Dignissim suspendisse in est ante in nibh mauris
+      cursus. Sodales ut etiam sit amet. Hendrerit dolor magna eget est lorem.
+      Tempus iaculis urna id volutpat lacus. Libero volutpat sed cras ornare.
+      Lacus sed turpis tincidunt id aliquet risus feugiat. Pretium lectus quam
+      id leo in. Sed pulvinar proin gravida hendrerit lectus. Leo in vitae
+      turpis massa. Quisque sagittis purus sit amet volutpat consequat mauris
+      nunc. Velit aliquet sagittis id consectetur purus ut faucibus. Nisl purus
+      in mollis nunc sed id. Elit at imperdiet dui accumsan sit amet. Gravida
+      arcu ac tortor dignissim convallis aenean. Quis imperdiet massa tincidunt
+      nunc pulvinar sapien et ligula ullamcorper. Vulputate dignissim
+      suspendisse in est ante. Non pulvinar neque laoreet suspendisse interdum
+      consectetur libero id faucibus. Aenean et tortor at risus viverra
+      adipiscing at in tellus. Elementum nisi quis eleifend quam adipiscing
+      vitae proin. Bibendum arcu vitae elementum curabitur vitae. Sed felis eget
+      velit aliquet sagittis id. Quisque id diam vel quam. Quis eleifend quam
+      adipiscing vitae proin. Felis eget velit aliquet sagittis id consectetur.
+      Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Imperdiet proin
+      fermentum leo vel orci porta non. Eu tincidunt tortor aliquam nulla
+      facilisi cras fermentum. Pulvinar pellentesque habitant morbi tristique.
+      Porttitor leo a diam sollicitudin. Fermentum odio eu feugiat pretium nibh
+      ipsum. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant
+      morbi. Feugiat sed lectus vestibulum mattis ullamcorper velit sed
+      ullamcorper. In hendrerit gravida rutrum quisque non. Facilisis magna
+      etiam tempor orci eu lobortis elementum nibh. Feugiat nibh sed pulvinar
+      proin gravida hendrerit lectus. Vitae proin sagittis nisl rhoncus mattis.
+      Integer feugiat scelerisque varius morbi enim nunc faucibus a. In aliquam
+      sem fringilla ut morbi tincidunt augue interdum. Risus sed vulputate odio
+      ut enim blandit. Non curabitur gravida arcu ac tortor dignissim. Feugiat
+      scelerisque varius morbi enim nunc faucibus a. Integer feugiat scelerisque
+      varius morbi. Vivamus arcu felis bibendum ut tristique et egestas quis
+      ipsum. Et ligula ullamcorper malesuada proin libero nunc consequat
+      interdum varius. Amet luctus venenatis lectus magna fringilla urna
+      porttitor rhoncus. Integer eget aliquet nibh praesent tristique magna sit.
+      Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Ornare
+      massa eget egestas purus viverra accumsan in nisl nisi. Et netus et
+      malesuada fames ac. At in tellus integer feugiat scelerisque. Vestibulum
+      sed arcu non odio euismod lacinia.
     </p>
     <figure>
       <img className="js-image" data-pos="0.6" alt="Fifth Pic" src={fifth} />
@@ -45,32 +70,5 @@ export default () => (
         portion of the country traversed.
       </figcaption>
     </figure>
-    <p>
-      Next day rain, fog, and mist prevailed, so there was much whist-playing
-      and smoking below, and much blowing of whistle above. Towards evening we
-      were off the coast of Iceland; the land was not visible, for we were
-      enveloped in fog, but there was no doubt about it, for we could hear that
-      land was not far distant. It may seem strange, but it was a fact, we were
-      really feeling our way along the coast by the aid of the steam-whistle.
-      The land thereabouts rises abruptly from the sea, and the echoes from the
-      sheer faces of rock enabled the officers of the vessel to judge their
-      distance. We went dangerously near to another vessel in the fog, but soon
-      afterwards it cleared off a bit, and there, just abeam on the starboard
-      side, was the other vessel, sufficiently close to be a dangerous neighbour
-      in thick weather. At midnight we were going full speed ahead, but when I
-      awoke at seven in the morning it was to find that our experiences of fog
-      were not at an end, that we were again in a very dense one, and that we
-      were lying-to. After breakfast it lifted sufficiently to allow of a course
-      being shaped for Northfjord, our first port of call in Iceland. Much of
-      the scenery of this fjord was obscured by the thick atmosphere, but
-      occasional glimpses through rifts proved that we were missing many fine
-      scenes that are on view when the conditions are favourable. The first
-      sight of Iceland was obtained at Dalatangi Point, four or five miles to
-      the north of the entrance to Northfjord. In the fog we had gone too far
-      north. Other glimpses on the way were of a corrie near Dalatangi, and the
-      face of the mountains near Mjofifjord. Our stay at Northfjord was of but
-      short duration, and there was no time to go ashore, so the only view we
-      had of the town was obtained from the vessel's deck.
-    </p>
   </section>
 );

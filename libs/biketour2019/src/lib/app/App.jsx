@@ -107,6 +107,10 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+     this.setState({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
     const textContainer = document.querySelector(".text");
     const { canvas } = this.refs;
     canvas.style.position = "absolute";
@@ -258,8 +262,8 @@ export default class App extends Component {
                       ready,
                     },
                     () => {
+                      this.onResize()
                       window.addEventListener("resize", this.onResize);
-                      this.onScroll();
                     }
                   );
                 }
@@ -870,6 +874,7 @@ export default class App extends Component {
             <span>Mark Twain</span>
           </blockquote>
         </div>
+        {!this.state.mapBuffer&&<h1> Loading Image .... </h1>}
         <div className="container">
           <canvas ref="canvas" width={width} height={height}></canvas>
         </div>

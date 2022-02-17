@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import {
   IconButton,
   Box,
@@ -16,14 +16,12 @@ import {
 import {
   FiHome,
   FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
   FiMenu,
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../assets/logo-white.svg'
 
 interface LinkItemProps {
   name: string;
@@ -32,7 +30,7 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Home', icon: FiHome, path: '/' },
-  { name: '2019 Bike Route', icon: FiTrendingUp, path: '/' },
+  { name: '2022 Bike Route', icon: FiTrendingUp, path: '/2022route' },
   { name: '2019 Bike Route', icon: FiTrendingUp, path: '/2019route' },
 ];
 
@@ -82,14 +80,12 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
-        </Text>
+        <img style={{backgroundColor: 'black'}} src={Logo}/>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <Link to={link.path}>
-          <NavItem key={link.name} icon={link.icon}>
+        <Link to={link.path} key={link.name}>
+          <NavItem  icon={link.icon}>
             {link.name}
           </NavItem>
         </Link>

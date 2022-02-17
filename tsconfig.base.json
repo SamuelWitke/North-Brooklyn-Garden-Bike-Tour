@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nbkparks/biketour2019": ["libs/biketour2019/src/index.jsx"]
+      "@nbkparks/biketour2019": ["libs/biketour2019/src/index.jsx"],
+      "@nbkparks/biketour2022": ["libs/biketour2022/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

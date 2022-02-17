@@ -1,6 +1,6 @@
 {
-  "root": "libs/biketour2019",
-  "sourceRoot": "libs/biketour2019/src",
+  "root": "libs/biketour2022",
+  "sourceRoot": "libs/biketour2022/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -8,16 +8,16 @@
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/biketour2019",
-        "tsConfig": "libs/biketour2019/tsconfig.lib.json",
-        "project": "libs/biketour2019/package.json",
-        "entryFile": "libs/biketour2019/src/index.jsx",
+        "outputPath": "dist/libs/biketour2022",
+        "tsConfig": "libs/biketour2022/tsconfig.lib.json",
+        "project": "libs/biketour2022/package.json",
+        "entryFile": "libs/biketour2022/src/index.ts",
         "external": ["react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
           {
-            "glob": "libs/biketour2019/README.md",
+            "glob": "libs/biketour2022/README.md",
             "input": ".",
             "output": "."
           }
@@ -28,14 +28,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/biketour2019/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/biketour2022/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/biketour2019"],
+      "outputs": ["coverage/libs/biketour2022"],
       "options": {
-        "jestConfig": "libs/biketour2019/jest.config.js",
+        "jestConfig": "libs/biketour2022/jest.config.js",
         "passWithNoTests": true
       }
     }

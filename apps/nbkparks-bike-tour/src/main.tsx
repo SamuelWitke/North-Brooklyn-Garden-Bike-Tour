@@ -6,7 +6,7 @@ import App from './app/app';
 
 ReactDOM.render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/North-Brooklyn-Garden-Bike-Tour/">
       <App />
     </BrowserRouter>
   </StrictMode>,

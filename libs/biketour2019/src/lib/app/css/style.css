@@ -78,7 +78,7 @@ a:focus {
 	min-height: 600px;
 	padding: 2em 1em 4em;
 	text-align: center;
-	width: 80vw;
+	   border: 10px solid #e8e8e8;
 	background: #181922 url(../../../assets/map_site.jpg) no-repeat center center;
 
 }

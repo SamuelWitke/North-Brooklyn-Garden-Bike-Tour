@@ -12,8 +12,8 @@ export function App() {
     <ChakraProvider>
       <SimpleSidebar>
         <Route exact path="/" render={() => <Home/>} />
-        <Route exact path="/2022route" render={Biketour2022} />
-        <Route exact path="/2019route" render={Route2019} />
+        <Route path="/2022route" render={Biketour2022} />
+        <Route path="/2019route" render={Route2019} />
       </SimpleSidebar>
     </ChakraProvider>
   );

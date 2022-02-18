@@ -1,32 +1,32 @@
-import React, { Component } from "react";
-import { loadImage } from "./utils/image-loader";
-import createCanvas from "./utils/create-canvas";
-import get from "./utils/ajax";
-import * as Path from "./utils/path";
-import { mult, sub, add } from "./utils/vector";
-import { clamp, interpolate, easing } from "./utils/math2";
-import "./App.css";
-import "./css/style.css";
-import "./css/normalize.css";
+import React, { Component } from 'react';
+import { loadImage } from './utils/image-loader';
+import createCanvas from './utils/create-canvas';
+import get from './utils/ajax';
+import * as Path from './utils/path';
+import { mult, sub, add } from './utils/vector';
+import { clamp, interpolate, easing } from './utils/math2';
+import './App.css';
+import './css/style.css';
+import './css/normalize.css';
 import {
   arrayNum,
   getScroll,
   setCompositeOperation,
   drawCanvasSlice,
-} from "./utils/map";
+} from './utils/map';
 import {
   setupBreakpoints,
   getMapBufferSize,
   calculateSections,
-} from "./utils/map";
-import Sections from "./sections";
+} from './utils/map';
+import Sections from './sections';
 
 export default class App extends Component {
   trailColor = () => {
     const { trailColor } = this.props;
     const { trailPath } = this.state;
     if (trailColor !== null) return trailColor;
-    if (trailPath === null) return "#ccc";
+    if (trailPath === null) return '#ccc';
   };
   trailWidth = () => {
     const { trailWidth } = this.props;
@@ -102,28 +102,28 @@ export default class App extends Component {
   };
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.onResize);
-    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
   }
 
   componentDidMount() {
-     this.setState({
+    this.setState({
       width: window.innerWidth,
       height: window.innerHeight,
     });
-    const textContainer = document.querySelector(".text");
+    const textContainer = document.querySelector('.text');
     const { canvas } = this.refs;
-    canvas.style.position = "absolute";
+    canvas.style.position = 'absolute';
     canvas.style.top = 1;
     canvas.style.left = 0;
-    const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#fff";
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fff';
     ctx.fillRect(0, 0, this.state.width, this.state.height);
 
     this.setState({ canvas, ctx, textContainer }, () => {
       const { scroll, sections, sectionsIcons, imagesBounds, sectionsBounds } =
         calculateSections(
-          this.state.textContainer.querySelectorAll(".js-section")
+          this.state.textContainer.querySelectorAll('.js-section')
         );
       this.setState({
         scroll,
@@ -132,9 +132,9 @@ export default class App extends Component {
         sectionsIcons,
         imagesBounds,
       });
-      Array.from(this.state.textContainer.querySelectorAll("img")).forEach(
+      Array.from(this.state.textContainer.querySelectorAll('img')).forEach(
         (img) => {
-          img.addEventListener("load", (event) => {
+          img.addEventListener('load', (event) => {
             this.renderMap();
           });
         }
@@ -142,29 +142,29 @@ export default class App extends Component {
       const scrollAnim = { value: 0 };
       get(this.props.mapSrc).then((response) => {
         const mapSVG = Array.from(
-          new DOMParser().parseFromString(response, "image/svg+xml").childNodes
+          new DOMParser().parseFromString(response, 'image/svg+xml').childNodes
         ).filter((node) => {
           let tag = node.tagName;
-          if (typeof tag === "undefined") return false;
-          return tag.toLowerCase() === "svg";
+          if (typeof tag === 'undefined') return false;
+          return tag.toLowerCase() === 'svg';
         })[0];
 
-        const cameraPath = mapSVG.querySelector("#camera-path path");
-        const trailPath = mapSVG.querySelector("#trail-path path");
+        const cameraPath = mapSVG.querySelector('#camera-path path');
+        const trailPath = mapSVG.querySelector('#trail-path path');
 
-        const points = Array.from(mapSVG.querySelectorAll("#points ellipse"))
+        const points = Array.from(mapSVG.querySelectorAll('#points ellipse'))
           .map((point) => {
             let [x, y] = [
-              parseFloat(point.getAttribute("cx")),
-              parseFloat(point.getAttribute("cy")),
+              parseFloat(point.getAttribute('cx')),
+              parseFloat(point.getAttribute('cy')),
             ];
             return {
               x,
               y,
               length: Path.getLengthAtPoint(trailPath, { x, y }),
-              label: (point.getAttribute("id") || "").replace(/_/g, " "),
-              color: point.getAttribute("fill") || "black",
-              radius: parseFloat(point.getAttribute("r")),
+              label: (point.getAttribute('id') || '').replace(/_/g, ' '),
+              color: point.getAttribute('fill') || 'black',
+              radius: parseFloat(point.getAttribute('r')),
             };
           })
           .sort((a, b) => a.length - b.length);
@@ -211,8 +211,8 @@ export default class App extends Component {
                     i;
 
                 let map = createCanvas(mapWidth * scale, mapHeight * scale);
-                let mapCtx = map.getContext("2d", { alpha: false });
-                mapCtx.fillStyle = "white";
+                let mapCtx = map.getContext('2d', { alpha: false });
+                mapCtx.fillStyle = 'white';
                 mapCtx.fillRect(0, 0, mapWidth * scale, mapHeight * scale);
                 mapCtx.drawImage(
                   img,
@@ -225,7 +225,7 @@ export default class App extends Component {
               });
 
               const mapBuffer = createCanvas(1, 1);
-              const mapBufferCtx = mapBuffer.getContext("2d", { alpha: false });
+              const mapBufferCtx = mapBuffer.getContext('2d', { alpha: false });
               this.setState(
                 {
                   mapBuffer,
@@ -234,7 +234,7 @@ export default class App extends Component {
                 },
                 () => {
                   this.updateMapBufferSize();
-                  mapBufferCtx.fillStyle = "white";
+                  mapBufferCtx.fillStyle = 'white';
                   mapBufferCtx.fillRect(
                     0,
                     0,
@@ -245,7 +245,7 @@ export default class App extends Component {
                   const mapBufferScale = this.state.mapScale;
 
                   const ready = true;
-                  document.addEventListener("scroll", this.onScroll);
+                  document.addEventListener('scroll', this.onScroll);
 
                   this.setState(
                     {
@@ -262,8 +262,8 @@ export default class App extends Component {
                       ready,
                     },
                     () => {
-                      this.onResize()
-                      window.addEventListener("resize", this.onResize);
+                      this.onResize();
+                      window.addEventListener('resize', this.onResize);
                     }
                   );
                 }
@@ -287,8 +287,8 @@ export default class App extends Component {
     );
     const { mapBuffer } = this.state;
 
-    mapBuffer.setAttribute("width", mapBufferSize.x);
-    mapBuffer.setAttribute("height", mapBufferSize.y);
+    mapBuffer.setAttribute('width', mapBufferSize.x);
+    mapBuffer.setAttribute('height', mapBufferSize.y);
     const mapBufferLast = {
       zoom: -1,
       pos: { x: -1, y: -1 },
@@ -314,7 +314,7 @@ export default class App extends Component {
 
         let nextSection = sections[i + 1];
         let isBeforeNextTop =
-          typeof nextSection !== "undefined" ? scroll < nextSection.top : false;
+          typeof nextSection !== 'undefined' ? scroll < nextSection.top : false;
         let isBeforeCurBottom = scroll < curSection.bottom;
         return isBeforeCurBottom || isBeforeNextTop;
       }
@@ -357,7 +357,7 @@ export default class App extends Component {
     this.updateMapBufferSize();
     const { scroll, sections, sectionsIcons, imagesBounds, sectionsBounds } =
       calculateSections(
-        this.state.textContainer.querySelectorAll(".js-section")
+        this.state.textContainer.querySelectorAll('.js-section')
       );
     this.setState({
       scroll,
@@ -372,7 +372,7 @@ export default class App extends Component {
     return this.getZoomAtPercent(this.state.pos);
   }
   drawMapBuffer(ctx, pos, zoom) {
-    ctx.fillStyle = "white";
+    ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, this.state.mapBufferSize.x, this.state.mapBufferSize.y);
     let mapIndex = 0;
     while (
@@ -441,9 +441,9 @@ export default class App extends Component {
       return v == null ? def : parseFloat(v);
     };
     let getMiddleZoom = (section) =>
-      getNumericAttr(section, "data-zoom-middle", getStartZoom(section));
+      getNumericAttr(section, 'data-zoom-middle', getStartZoom(section));
     let getStartZoom = (section) =>
-      getNumericAttr(section, "data-zoom-start", 1);
+      getNumericAttr(section, 'data-zoom-start', 1);
 
     let zoom1 = pos <= 0.5 ? getStartZoom(section) : getMiddleZoom(section);
     let zoom2 = pos <= 0.5 ? getMiddleZoom(section) : getStartZoom(nextSection);
@@ -509,10 +509,10 @@ export default class App extends Component {
         };
         let colorValue = imageVisibility * 0.3;
         const { canvas } = this.refs;
-        const ctx = canvas.getContext("2d");
+        const ctx = canvas.getContext('2d');
 
         ctx.fillStyle = `rgba(220,220,202,${colorValue})`;
-        setCompositeOperation(ctx, "darken", "source-over");
+        setCompositeOperation(ctx, 'darken', 'source-over');
 
         ctx.beginPath();
         ctx.moveTo(origin.x + originOffset.x, origin.y + originOffset.y);
@@ -558,7 +558,7 @@ export default class App extends Component {
 
     let drawSubdividedPath = (path, interval = 1, end = -1) => {
       const { canvas } = this.refs;
-      const ctx = canvas.getContext("2d");
+      const ctx = canvas.getContext('2d');
 
       ctx.beginPath();
       ctx.moveTo(...canvasPos(path[0]));
@@ -587,18 +587,18 @@ export default class App extends Component {
 
     let drawTrail = () => {
       const { canvas } = this.refs;
-      const ctx = canvas.getContext("2d");
+      const ctx = canvas.getContext('2d');
 
       ctx.lineWidth = this.state.trailWidth;
       ctx.strokeStyle = this.state.trailColor;
-      ctx.lineCap = "round";
+      ctx.lineCap = 'round';
       ctx.setLineDash(this.props.trailDash);
       drawSubdividedPath(this.state.trailSubdivisions, 4);
 
       ctx.lineWidth = this.props.trailVisitedWidth;
       ctx.setLineDash([]);
       ctx.strokeStyle = this.props.trailVisitedColor;
-      ctx.lineCap = "butt";
+      ctx.lineCap = 'butt';
       drawSubdividedPath(this.state.trailSubdivisions, 2, trailTipIndex);
     };
 
@@ -617,7 +617,7 @@ export default class App extends Component {
 
     let drawPoint = (point, i) => {
       const { canvas } = this.refs;
-      const ctx = canvas.getContext("2d");
+      const ctx = canvas.getContext('2d');
 
       ctx.fillStyle = setByStatus(
         i,
@@ -640,21 +640,21 @@ export default class App extends Component {
     let drawLabel = (point, i) => {
       let fontSize = 15;
       const { canvas } = this.refs;
-      const ctx = canvas.getContext("2d");
-      ctx.font = `${setByStatus(i, "normal", "bold")} ${setByStatus(
+      const ctx = canvas.getContext('2d');
+      ctx.font = `${setByStatus(i, 'normal', 'bold')} ${setByStatus(
         i,
         fontSize,
         fontSize * 1.2
       )}px Arial`;
-      ctx.textAlign = "left";
-      ctx.textBaseline = "middle";
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
       ctx.fillStyle = setByStatus(
         i,
         this.props.fontPastColor,
         this.props.fontPresentColor,
         this.props.fontFutureColor
       );
-      ctx.strokeStyle = "#FDFCEC";
+      ctx.strokeStyle = '#FDFCEC';
       ctx.lineWidth = 6;
       let pos = add(point, { x: 20 * inverseZoom, y: 0 });
       ctx.strokeText(point.label, ...canvasPos(pos));
@@ -665,7 +665,7 @@ export default class App extends Component {
 
     let drawIcon = () => {
       const { canvas } = this.refs;
-      const ctx = canvas.getContext("2d");
+      const ctx = canvas.getContext('2d');
 
       if (icon == null) return;
 
@@ -741,7 +741,7 @@ export default class App extends Component {
     let drawMap = () => {
       checkForBufferUpdate();
       const { canvas } = this.refs;
-      const ctx = canvas.getContext("2d");
+      const ctx = canvas.getContext('2d');
 
       if (!updatedBufferThisFrame) {
         let slice = {
@@ -800,14 +800,14 @@ export default class App extends Component {
     let dpi = 1; //window.devicePixelRatio
 
     let canvasPos = (x, y) =>
-      typeof x === "object"
+      typeof x === 'object'
         ? canvasPos(x.x, x.y)
         : [(x - mapSlice.x) * zoom, (y - mapSlice.y) * zoom];
 
     // Clear canvas
     const { canvas } = this.refs;
-    const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#fff";
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fff';
     ctx.fillRect(
       0,
       0,
@@ -822,7 +822,7 @@ export default class App extends Component {
     drawLabels();
     drawImagePointers();
 
-    let blendWorks = setCompositeOperation(ctx, "screen");
+    let blendWorks = setCompositeOperation(ctx, 'screen');
 
     let gradient = ctx.createLinearGradient(
       this.state.sectionsBounds[0].right,
@@ -831,11 +831,11 @@ export default class App extends Component {
       0
     );
     if (blendWorks) {
-      gradient.addColorStop(0, "rgba(185, 217, 151, 1)");
-      gradient.addColorStop(1, "rgba(185, 217, 151, 0)");
+      gradient.addColorStop(0, 'rgba(185, 217, 151, 1)');
+      gradient.addColorStop(1, 'rgba(185, 217, 151, 0)');
     } else {
-      gradient.addColorStop(0, "rgba(255, 255, 255, 0.85)");
-      gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+      gradient.addColorStop(0, 'rgba(255, 255, 255, 0.85)');
+      gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
     }
     ctx.fillStyle = gradient;
 
@@ -853,26 +853,15 @@ export default class App extends Component {
     const { width, height } = this.state;
     return (
       <div className="main">
-        <header className="codrops-header">
-          <h1 className="header-title">
-            <span className="header-title__main">Open Garden Day 2019</span>{" "}
-            <span className="header-title__part">Bike Tour</span>{" "}
-            <span className="header-title__sub">
-              An interactive storytelling experiment with Canvas. <br />
-            </span>
-          </h1>
-        </header>
+        <header className="codrops-header"></header>
         <div className="intro">
           <blockquote>
-            <em>
-              “Twenty years from now you will be more disappointed by the things
-              you didn’t do <br />
-              than by the ones you did do.”
-            </em>
-            <span>Mark Twain</span>
+            <em>Open Garden Day 2019</em>
+            <span>Bike Tour</span>
+            An interactive storytelling experiment with Canvas. <br />
           </blockquote>
         </div>
-        {!this.state.mapBuffer&&<h1> Loading Image .... </h1>}
+        {!this.state.mapBuffer && <h1> Loading Image .... </h1>}
         <div className="container">
           <canvas ref="canvas" width={width} height={height}></canvas>
         </div>

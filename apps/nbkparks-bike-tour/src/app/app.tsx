@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.css';
 import Route2019 from '@nbkparks/biketour2019';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import SimpleSidebar from './Sidebar';
 import { ChakraProvider } from '@chakra-ui/react';
 import  Biketour2022 from '@nbkparks/biketour2022'

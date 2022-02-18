@@ -78,7 +78,9 @@ a:focus {
 	min-height: 600px;
 	padding: 2em 1em 4em;
 	text-align: center;
-	background-size: cover;
+	width: 80vw;
+	background: #181922 url(../../../assets/map_site.jpg) no-repeat center center;
+
 }
 
 .codrops-header::before {
